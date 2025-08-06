@@ -1,0 +1,32 @@
+/* Underline animado */
+nav a {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Innecesario si no querés que cambie el color cuando estás encima del link */
+/* nav a:hover {
+    color: white;
+} */
+
+nav a::before {
+    content: ""; /* contenido que se puedes mostrar conjunto al underline; también animado */
+    position: absolute;
+    width: 100%; /* largo del underline total */
+    height: 2px; /* ancho del underline */
+    bottom: -2px; /* ubicación del underline desde el margen inferior */
+    left: 0;
+    background-color: #ffffff; /* color del underline */
+    transform: scaleX(0); /* oculta el underline inicialment; cambiando el valor hace que se muestre más o menos antes de realizada la animación */
+    transition: transform 0.3s ease;
+    transform-origin: center; /* origen de la animación*/
+    will-change: transform; /* optimización para dispositivos de bajos recursos */
+}
+
+nav a:hover::before {
+    transform: scaleX(1);
+}
+
+
