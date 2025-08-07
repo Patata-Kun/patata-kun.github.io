@@ -1,3 +1,10 @@
+:root {
+    --color_background: hsl(0, 0%, 5%);
+    --color_text: white;
+    --color_border: hsl(0, 0%, 80%);
+    --color_shadow: hsla(0, 0%, 100%, 0.5);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -5,105 +12,71 @@ html {
 body {
     /* font */
     font-family: "JetBrains Mono", sans-serif;
-    color: white;
-    line-height: 1.5;
+    color: var(--color_text);
+    background-color: var(--color_background);
 
     /* page */
-    background-color: hsl(0, 0%, 5%);
     margin: 2em;
     padding: 0;
 }
 
-/* Favicon cannot be changed using CSS variables alone; use JavaScript in your HTML to update the favicon based on the color scheme. */
-/* Example JavaScript to add in your HTML file:
-<script>
-const setFavicon = (href) => {
-  let link = document.querySelector("link[rel~='icon']");
-  if (!link) {
-    link = document.createElement('link');
-    link.rel = 'icon';
-    document.head.appendChild(link);
-  }
-  link.href = href;
-};
-const updateFavicon = () => {
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    setFavicon('images/SVG/favicon.svg');
-  } else {
-    setFavicon('images/SVG/favicon-dark.svg');
-  }
-};
-updateFavicon();
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
-</script>
-*/
-
-
-h1 {
-    line-height: 1.15;
-}
-
-.indent {
+p {
     text-indent: 1.5em;
-}
-
-.container_index h1 {
-    font-weight: 800;
-    font-size: clamp(3rem, calc(3vh + 1rem), 5rem); /* min, preferred, max */
-    color: white;
-    margin-top: -2em;
-}
-
-.container_index h2 {
-    font-weight: 400;
-    font-size: clamp(0.5rem, calc(1.5vh + 0.5rem), 3rem);
-    color: white;
-    margin-top: -1.5em;
 }
 
 .container_index {
     display: flex;
-    flex-direction: column; /* organize the items in columns */
-    align-items: center; /* align the item in the vertical center*/
-    justify-content: center; /* align the items in the horizontal center*/
-    text-align: center; /* center the text inside the div */
-
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     height: 100dvh;
-    height: 100vh;
-    /* border: 15px solid blue; */
 }
 
-.nav_bar{
-    /* background: lab(69 23 -30); */
-    border: 2px solid hsl(0, 0%, 80%);
+.container_index h1 {
+    font-weight: 800;
+    font-size: clamp(2rem, calc(2.8vh + 1.5rem), 5rem); /* min, preferred, max */
+    color: var(--color_text);
+    margin-top: -3em;
+    line-height: 1.15;
+}
+
+
+.container_index h2 {
+    font-weight: 400;
+    font-size: clamp(0.5rem, calc(1vh + 1rem), 3rem);
+    color: var(--color_text);
+    line-height: 1.5;
+    margin-top: -2.5rem;
+}
+
+.nav_bar {
+    border: 2px solid var(--color_border);
     border-radius: 10px;
-    box-shadow: 0 4px 10px hsla(0, 0%, 100%, 0.5);
+    box-shadow: 0 4px 10px var(--color_shadow);
     width: auto;
-    padding: min(1em, 5%); /* responsive design; changes the padding depending on the viewport size to a minimum of 5% */
-    transition: transform 0.2s ease-in-out;}
-    
+    padding: min(1em, 5%);
+    transition: transform 0.2s ease-in-out;
+}
+
 nav ul {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
     padding: 0;
     margin: 0;
-    gap: 2rem;
     list-style: none;
-    align-items: center;
 }
 
 nav img {
     width: 2em;
     height: 2em;
-    
 }
 
-
-
-
 footer {
-    color: white;
+    color: var(--color_text);
     font-weight: bold;
     text-align: center;
-    margin-top: 5em;
+    margin-block-start: 5em;
 }
