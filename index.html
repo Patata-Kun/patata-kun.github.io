@@ -8,24 +8,35 @@
     <title>Jeremías Cardona</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/animation.css">
-    <script src="scripts/script.js"></script>
+    <link rel="stylesheet" href="/css/responsive.css">
+    <script src="scripts/favicon.js"></script>
+    <script src="scripts/sidebar.js"></script>
 
     <style>
     @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
     </style>
-
+    
 </head>
 
-<body>git
+<body>
 
 <header>
-    <div class="nav_bar">
+    <div class="nav-bar">
         <nav>
-            <ul>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"> <a href="#"> <img src="images/SVG/nav-close.svg" alt="Close nav-bar"> </a></li>
                 <li> <a href="#about_me">About me</a></li>
-                <li> <a href=""> Projects </a></li>
+                <li> <a href="#projects"> Projects </a></li>
                 <li> <a href="">Contact</a></li>
                 <li> <a href="https://github.com/Patata-Kun" aria-label="GitHub profile" > <img src="images/SVG/github-mark-white.svg" alt="GitHub invertocat logo"> </a></li>
+                <a href="javascript:void(0);" class="nav-icon" onclick="toggleNavBar()"></a>
+            </ul>
+            <ul>
+                <li class="hideOnMobile"> <a href="#about_me">About me</a></li>
+                <li class="hideOnMobile"> <a href="#projects"> Projects </a></li>
+                <li class="hideOnMobile"> <a href="">Contact</a></li>
+                <li class="hideOnMobile"> <a href="https://github.com/Patata-Kun" aria-label="GitHub profile" > <img src="images/SVG/github-mark-white.svg" alt="GitHub invertocat logo"> </a></li>
+                <li class="menu-button" onclick="showSidebar()"> <a href="#"> <img src="images/SVG/nav-open.svg" alt="Open nav-bar"> </a></li>
             </ul>
         </nav>
     </div>
@@ -41,17 +52,17 @@
         &gt; About me
     </h1>
 
-    <p>I'm a 22-year-old web development student from Uruguay in Jóvenes a Programar 2025 edition.</p>
+    <p>I'm a 22-year-old web development student from Uruguay in Jóvenes a Programar 2025 edition. I'm currently learning HTML5, CSS3, and JavaScript.</p>
 
-    <p> Since I was a kid, I've had a huge list of interests; programming was one of them. In school, I played with Scratch and fell in love with it. I've always been interested in technology and graphic design, especially hardware and UI/UX, so I decided to start learning web development to combine both. I love learning new things and I'm always looking for ways to improve my skills. I'd say I'm "hungry to learn".</p>
+    <p> Since I was a kid, I've had a huge list of interests; programming was one of them. In school, I played with Scratch and fell in love with it. In high school I even participated in the <a href="https://www.firstlegoleague.org/">FIRST LEGO League</a> with my friends and my computer science teacher. I've always been interested in technology and graphic design, especially hardware and UI/UX, so I decided to start learning web development. I love learning new things; I'd say I'm "hungry to learn".</p>
 
     <p>I consider myself a perfectionist, so everything needs to reach a minimum level of "perfection" to me.</p>
-    
-    <p>I enjoy listening to music and discovering new amazing pieces, playing piano, video games, and spending time procrastinating on the internet, especially on X (formerly known as Twitter).</p>
-    
+
+    <p>I enjoy listening to music and discovering new amazing pieces; I listen to a wide range of genres, and I love to find new artists and songs. In my free time, I like to play piano, video games, and spend time procrastinating on the internet, especially on X (formerly known as Twitter).</p>
+
     <br>
 
-    <h1>
+    <h1 id="projects">
         &gt; Projects
     </h1>
 

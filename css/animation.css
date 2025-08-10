@@ -1,22 +1,17 @@
 /* Underline animado */
-nav a {
-    position: relative;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
 
 /* Innecesario si no querés que cambie el color cuando estás encima del link */
-/* nav a:hover {
-    color: white;
-} */
+nav ul:not(.sidebar) li:not(.menu-button) a:hover:not([href*="github.com"]) {
+    font-weight: 900;
+    transition: font-weight 0.5s ease-in;
+}
 
-nav a::before {
+nav ul:not(.sidebar) li:not(.menu-button) a:not([href*="github.com"])::before {
     content: ""; /* contenido que se puedes mostrar conjunto al underline; también animado */
     position: absolute;
     width: 100%; /* largo del underline total */
     height: 2px; /* ancho del underline */
-    bottom: -2px; /* ubicación del underline desde el margen inferior */
+    bottom: -3px; /* ubicación del underline desde el margen inferior */
     left: 0;
     background-color: #ffffff; /* color del underline */
     transform: scaleX(0); /* oculta el underline inicialment; cambiando el valor hace que se muestre más o menos antes de realizada la animación */
@@ -25,7 +20,11 @@ nav a::before {
     will-change: transform; /* optimización para dispositivos de bajos recursos */
 }
 
-nav a:hover::before {
+nav ul:not(.sidebar) li:not(.menu-button) a:not([href*="github.com"]) img {
+    padding-bottom: 3px;
+}
+
+nav ul:not(.sidebar) li:not(.menu-button) a:hover:not([href*="github.com"])::before {
     transform: scaleX(1);
 }
 
